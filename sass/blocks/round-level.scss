@@ -1,0 +1,246 @@
+// -- vars
+$bg-color: rgba(0, 0, 0, 0.6);
+
+$large-size: 100px;
+$default-size: 60px;
+$small-size: 45px;
+
+$label-font-size: $default-size / 4;
+$label-font-size-redo: $default-size * 4;
+$progress-color: #ff8d30;
+
+// -- mixins
+@mixin size($width, $height) {
+  height: $height;
+  width: $width;
+}
+
+@mixin draw-progress($progress) {
+  .round-level__pie {
+    .round-level__half-circle {
+      border-color: $progress-color;
+    }
+
+    .round-level__left-side {
+      transform: rotate($progress * 3.6deg);
+    }
+
+    @if $progress <= 50 {
+      .round-level__right-side {
+        display: none;
+      }
+    }
+
+    @else {
+      clip: rect(auto, auto, auto, auto);
+
+      .round-level__right-side {
+        transform: rotate(180deg);
+      }
+    }
+  }
+}
+
+@mixin draw-progress--solid($progress, $color, $bg-color) {
+  background: linear-gradient(to right, $color 50%, $bg-color 50%);
+
+  &::before {
+    @if $progress <= 50 {
+      background: $bg-color;
+      transform: rotate((100 - (50 - $progress)) / 100 * 360deg * -1);
+    }
+
+    @else {
+      background: $color;
+      transform: rotate((100 - $progress) / 100 * 360deg);
+    }
+  }
+}
+
+// selectors
+
+.round-level {
+  @include size($default-size, $default-size);
+
+  position: relative;
+
+  &.progress-99 {
+    @include draw-progress(97);
+  }
+
+  &.progress-80 {
+    @include draw-progress(82);
+  }
+
+  &.progress-25 {
+    @include draw-progress(25);
+  }
+
+  &.progress-50 {
+    @include draw-progress(50);
+  }
+}
+
+.round-level__pie {
+  @include size(100%, 100%);
+
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  clip: rect(0, $default-size, $default-size, $default-size / 2);
+  // transform: rotate(-15deg);
+}
+
+.round-level__half-circle {
+  @include size(100%, 100%);
+
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  border: 3px solid #3498db;
+  border-radius: 50%;
+
+  clip: rect(0, $default-size / 2, $default-size, 0);
+}
+
+.round-level__label {
+  display: block;
+  margin: 0;
+  padding: 12px 0;
+
+  color: #ecf0f1;
+  text-align: center;
+
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+
+  background: $bg-color;
+  border-radius: 50%;
+
+  &_no-bg {
+    background: transparent;
+  }
+}
+
+.round-level__percents {
+  width: 31px;
+  padding-bottom: 2px;
+  margin: 0 auto;
+  margin-bottom: 2px;
+
+  font-size: 24px;
+  line-height: 22px;
+  font-weight: bold;
+
+  border-bottom: 1px solid rgba(#ffffff, 0.3);
+
+  &_blue {
+    color: $blue-base;
+  }
+
+  &_dark-blue {
+    color: $blue-darken;
+  }
+}
+
+.round-level__subtext {
+  margin: 0;
+  font-size: 14px;
+  line-height: 14px;
+}
+
+.round-level_small .round-level__percents {
+  border-color: #e5e5e5;
+}
+
+.round-level_small .round-level__label {
+  color: #e5e5e5;
+}
+
+.round-level_large {
+  @include size($large-size, $large-size);
+}
+
+.round-level_large .round-level__pie {
+  clip: rect(0, $large-size, $large-size, $large-size / 2);
+  top: -1px;
+}
+
+.round-level_large .round-level__half-circle {
+  border-width: 3px;
+
+  clip: rect(0, $large-size / 2, $large-size, 0);
+}
+
+.round-level_large .round-level__label {
+  padding-top: 21px;
+}
+
+.round-level_large .round-level__percents {
+  width: 49px;
+  margin-bottom: 5px;
+
+  font-size: 38px;
+  line-height: 35px;
+
+  border-color: #cbced9;
+  border-width: 2px;
+}
+
+.round-level_large .round-level__subtext {
+  width: auto;
+  font-size: 18px;
+
+  color: $text-color;
+}
+
+@media #{$media-tablet-less} {
+  .round-level_small {
+    @include size($small-size, $small-size);
+  }
+
+  .round-level_small .round-level__pie {
+    clip: rect(0, $small-size, $small-size, $small-size / 2);
+  }
+
+  .round-level_small .round-level__half-circle {
+    border-width: 2px;
+
+    clip: rect(0, $small-size / 2, $small-size, 0);
+  }
+
+  .round-level_small .round-level__percents {
+    border: none;
+  }
+
+  .round-level_small .round-level__subtext {
+    display: none;
+  }
+
+  .round-level_small .round-level__label {
+    border: none;
+  }
+}
+
+@media #{$media-tablet-more} {
+  .round-level_large {
+    width: 94px;
+    height: 94px;
+  }
+
+  .round-level_large .round-level__label {
+    padding-top: 18px;
+  }
+}
+
+@media #{$media-desktop-more} {
+  .round-level__percents_dark-blue,
+  .round-level_large .round-level__subtext {
+    color: #ffffff;
+  }
+}

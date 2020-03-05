@@ -1,0 +1,27 @@
+.logo {
+  display: block;
+}
+
+.logo__wrapper {
+  display: none;
+}
+
+.logo__wrapper_white {
+  display: inline;
+}
+
+// FIXED TOP-bar
+.top-bar_position-fixed .logo__wrapper_white {
+  display: none;
+}
+
+.top-bar_position-fixed .logo__wrapper_blue {
+  display: inline;
+}
+
+@media #{$media-desktop-more} {
+  .logo {
+    width: 200px;
+    height: 52px;
+  }
+}

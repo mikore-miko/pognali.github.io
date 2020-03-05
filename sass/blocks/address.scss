@@ -1,0 +1,129 @@
+.address {
+  margin-top: -49px;
+  padding: 80px 25px;
+  padding-bottom: 34px;
+
+  position: relative;
+
+  z-index: 1;
+
+  background-color: $yellow-base;
+
+  border-radius: 0 0 30px 30px;
+}
+
+.address__path-btn {
+  display: flex;
+  padding: 19px;
+
+  color: $blue-base;
+
+  align-items: center;
+
+  text-align: center;
+  font-size: 18px;
+  line-height: 18px;
+  font-weight: 700;
+
+  border: 3px solid $blue-base;
+  border-radius: 10px;
+
+  @include triangle-arrow-right;
+}
+
+.address__text {
+  display: flex;
+  margin: 0;
+  margin-bottom: 33px;
+  align-items: center;
+
+  color: $blue-nav-text;
+
+  font-size: 16px;
+  line-height: 22px;
+  font-weight: 700;
+
+  text-transform: uppercase;
+
+  &::before {
+    flex-shrink: 0;
+    width: 45px;
+    height: 45px;
+    margin-right: 17px;
+
+    background: #121936 url("../img/contacts-location.svg") center/14px 22px no-repeat;
+
+    border-radius: 50%;
+
+    content: "";
+  }
+}
+
+@media #{$media-tablet-more} {
+  .address {
+    padding-top: 96px;
+    padding-left: 75px;
+    padding-right: 75px;
+    padding-bottom: 86px;
+
+    border-radius: 0 0 60px 60px;
+  }
+
+  .address__text {
+    margin-bottom: 44px;
+
+    font-size: 28px;
+    line-height: 28px;
+
+    &::before {
+      width: 68px;
+      height: 68px;
+      margin-right: 25px;
+
+      background-size: 21px 32px;
+    }
+  }
+
+  .address__path-btn {
+    border-radius: 20px;
+    padding: 27px 33px;
+    padding-bottom: 30px;
+
+    font-size: 24px;
+  }
+}
+
+@media #{$media-desktop-more} {
+  .address {
+    padding: 103px 0;
+    padding-bottom: 57px;
+  }
+
+  .address__content-wrapper {
+    display: flex;
+    max-width: 1173px;
+    padding-left: 151px;
+    margin: 0 auto;
+
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .address__text {
+    margin: 0;
+
+    &::before {
+      width: 90px;
+      height: 90px;
+
+      margin-right: 31px;
+
+      background-size: 28px;
+    }
+  }
+
+  .address__path-btn::after {
+    margin-top: 6px;
+    margin-left: 20px;
+  }
+}

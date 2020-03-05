@@ -1,0 +1,552 @@
+/* Shared for all accordion types */
+.accordion {
+  padding: 0 5px;
+  margin: 0;
+
+  list-style: none;
+}
+
+.accordion__item {
+  margin: 0;
+  padding: 0;
+
+  overflow: hidden;
+
+  border-top: 1px solid #f3c72b;
+}
+
+.accordion__title {
+  display: block;
+  padding: 11px 0;
+  padding-bottom: 12px;
+
+  position: relative;
+
+  font-size: 16px;
+  line-height: 16px;
+  color: $blue-base;
+  font-weight: 700;
+  text-transform: uppercase;
+
+  &::after {
+    display: block;
+    width: 5px;
+
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+
+    border: 4px solid $blue-nav-text;
+
+    border-top-width: 4px;
+
+    border-bottom-width: 0;
+    border-left-color: transparent;
+    border-right-color: transparent;
+
+    content: "";
+  }
+}
+
+.accordion__body {
+  padding: 0;
+  overflow: hidden;
+  height: 0;
+  border-top: 0;
+
+  &_inline {
+    display: flex;
+    flex-wrap: wrap;
+  }
+}
+
+.accordion__body-control:checked ~ .accordion__body {
+  height: auto;
+  padding-top: 4px;
+  padding-bottom: 8px;
+}
+
+.accordion__body-control:checked ~ .accordion__title::after {
+  border-bottom-width: 4px;
+  border-top-width: 0;
+}
+
+.accordion__value {
+  display: flex;
+  align-items: center;
+  margin: 0;
+  margin-bottom: 12px;
+
+  position: relative;
+
+  font-size: 15px;
+  line-height: 15px;
+
+  &::before {
+    display: block;
+    margin-right: 9px;
+
+    width: 18px;
+    height: 18px;
+
+    background-color: #ffffff;
+    border-radius: 2px;
+
+    content: "";
+  }
+
+  &::after {
+    display: block;
+    width: 9px;
+    height: 9px;
+
+    position: absolute;
+    top: 5px;
+    left: 5px;
+
+    background: url("../img/tick.svg");
+    opacity: 0;
+
+    content: "";
+  }
+
+  &_btn {
+    width: 32px;
+    height: 33px;
+    margin-top: 2px;
+    margin-bottom: 10px;
+
+    background-color: #ffffff;
+    border-radius: 50%;
+
+    &::before,
+    &::after {
+      content: none;
+    }
+  }
+}
+
+.accordion___transport {
+  margin: auto;
+
+  opacity: 0.15;
+
+  &_plane {
+    width: 14px;
+    height: 16px;
+  }
+
+  &_bus {
+    width: 13px;
+    height: 16px;
+  }
+
+  &_bike {
+    width: 19px;
+    height: 17px;
+  }
+
+  &_run {
+    width: 15px;
+    height: 17px;
+  }
+}
+
+.accordion__level-input-wrapper {
+  display: flex;
+  margin-bottom: 22px;
+}
+
+.accordion__level-label {
+  width: 50%;
+}
+
+.accordion__level-input {
+  width: 100%;
+
+  color: $blue-base;
+  font-size: 15px;
+  line-height: 31px;
+  font-weight: bold;
+  text-align: center;
+  font-family: $font-family;
+
+  border: 1px solid #cbced9;
+  border-radius: 4px 0 0 4px;
+
+  /*
+  -moz-appearance:textfield;
+
+  &::-webkit-inner-spin-button,
+  &::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+  */
+}
+
+// Second input
+.accordion__level-label + .accordion__level-label .accordion__level-input {
+  border-left: none;
+  border-radius: 0 4px 4px 0;
+}
+
+.accordion__level-label + .accordion__level-label {
+  position: relative;
+
+  &::before {
+    display: block;
+    width: 16px;
+    height: 11px;
+
+    position: absolute;
+    top: 50%;
+    left: -8px;
+    transform: translateY(-50%);
+
+    background: linear-gradient(to bottom, #ffffff 5px, #cbced9 5px, #cbced9 6px, #ffffff 6px);
+    content: "";
+  }
+}
+
+// SLIDER
+.accordion__level-slider {
+  height: 2px;
+  padding: 0 10px;
+  margin-bottom: 18px;
+
+  position: relative;
+  left: -10px;
+  right: -10px;
+
+  background-color: $blue-base;
+}
+
+.accordion__level-slider-element {
+  display: block;
+  width: 10px;
+  height: 10px;
+  padding: 0;
+
+  position: absolute;
+  top: 50%;
+  left: 10px;
+  transform: translateY(-50%);
+
+  font-size: 0;
+
+  background-color: $blue-base;
+
+  border: none;
+  border-radius: 50%;
+}
+
+.accordion__level-slider-element_from {
+  left: 35%;
+
+  &::before {
+    display: block;
+    height: 2px;
+
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    left: -9999px;
+    transform: translateY(-50%);
+
+    background-color: #d2b54e;
+    content: "";
+  }
+}
+
+.accordion__level-slider-element_to {
+  left: 100%;
+
+  &::after {
+    display: block;
+    height: 2px;
+
+    position: absolute;
+    top: 50%;
+    right: -9999px;
+    left: 10px;
+    transform: translateY(-50%);
+
+    background-color: #d2b54e;
+    content: "";
+  }
+}
+
+.accordion__value-control:checked + .accordion__value::after {
+  opacity: 1;
+}
+
+.accordion__value-control:checked + .accordion__value .accordion___transport {
+  opacity: 1;
+}
+
+@media #{$media-between-tablet-desktop} {
+  .accordion {
+    padding: 32px 5px;
+    padding-bottom: 17px;
+    margin-bottom: 36px;
+
+    border: 1px solid #f3c72b;
+    border-right: none;
+    border-left: none;
+  }
+
+  .accordion__item {
+    display: flex;
+    margin-bottom: 20px;
+
+    align-items: center;
+  }
+
+  .accordion__title {
+    width: 120px;
+    padding: 0;
+
+    &::after {
+      display: inline;
+
+      position: static;
+
+      border: none;
+
+      content: ":";
+    }
+  }
+
+  .accordion__body {
+    display: flex;
+    width: 500px;
+    height: auto;
+    padding: 0;
+
+    align-items: center;
+  }
+
+  .accordion__value {
+    width: 175px;
+    margin: 0;
+
+    white-space: nowrap;
+
+    &:last-child {
+      width: 150px;
+    }
+
+    &:nth-child(2) {
+      padding-left: 8px;
+
+      &::after {
+        left: 14px;
+      }
+    }
+  }
+
+  .accordion__item_btns .accordion__value_btn {
+    width: 43px;
+    height: 43px;
+    padding: 0;
+    margin: 0;
+  }
+
+  .accordion__item_btns {
+    margin-bottom: 9px;
+  }
+
+  .accordion__level-slider {
+    width: 100%;
+    height: 3px;
+    padding: 0 25px;
+    margin: auto 0;
+  }
+
+  .accordion__level-slider-wrapper {
+    display: flex;
+    width: 280px;
+    height: 15px;
+    padding-right: 3px;
+    margin-left: 7px;
+
+    overflow: hidden;
+  }
+
+  .accordion__level-slider-element {
+    width: 13px;
+    height: 13px;
+  }
+
+  .accordion__level-slider-element_from::before {
+    height: 3px;
+    right: 13px;
+  }
+
+  .accordion__level-slider-element_to::after {
+    height: 4px;
+    left: 13px;
+  }
+
+  .accordion__level-slider-element_from {
+    left: 28%;
+  }
+
+  .accordion__level-input-wrapper {
+    width: 150px;
+    margin: 0;
+    margin-left: auto;
+
+    order: 1;
+  }
+
+  .accordion__body-control:checked ~ .accordion__body {
+    padding: 0;
+    padding-top: 2px;
+  }
+
+  .accordion__btn {
+    width: 98%;
+    height: 50px;
+    padding: 0;
+    margin: 0 auto;
+
+    font-size: 20px;
+    font-family: inherit;
+  }
+}
+
+@media #{$media-tablet-more} {
+  .accordion__title {
+    font-size: 20px;
+    line-height: 30px;
+    font-weight: medium;
+  }
+
+  .accordion__value {
+    font-size: 20px;
+    line-height: 20px;
+
+    &::before {
+      width: 24px;
+      height: 24px;
+      margin-right: 12px;
+    }
+
+    &::after {
+      width: 12px;
+      height: 12px;
+
+      top: 7px;
+      left: 7px;
+    }
+  }
+
+  .accordion__level-input {
+    font-size: 20px;
+    line-height: 42px;
+  }
+
+  .accordion___transport_plane {
+    width: 19px;
+    height: 21px;
+  }
+
+  .accordion___transport_bus {
+    width: 17px;
+    height: 21px;
+  }
+
+  .accordion___transport_bike {
+    width: 24px;
+    height: 21px;
+  }
+
+  .accordion___transport_run {
+    width: 20px;
+    height: 21px;
+  }
+
+  .accordion__item {
+    border: none;
+  }
+}
+
+@media #{$media-desktop-more} {
+  .accordion {
+    padding: 0;
+    padding-right: 5px;
+    margin-bottom: 10px;
+  }
+
+  .accordion__title {
+    letter-spacing: -0.5px;
+    padding-bottom: 0;
+  }
+
+  .accordion__title::after {
+    transform: translateY(27%);
+    border-top-width: 5px;
+  }
+
+  .accordion__body-control:checked ~ .accordion__body {
+    padding-top: 20px;
+    padding-bottom: 16px;
+  }
+
+  .accordion__value {
+    margin-bottom: 16px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  .accordion__value_btn {
+    width: 43px;
+    height: 43px;
+    margin-bottom: 0;
+  }
+
+  .accordion__body-control:checked ~ .accordion__body_inline {
+    padding-top: 13px;
+    padding-bottom: 17px;
+  }
+
+  .accordion__level-input-wrapper:first-child {
+    margin-top: -5px;
+    margin-bottom: 36px;
+  }
+
+  .accordion__level-slider-element {
+    width: 13px;
+    height: 13px;
+  }
+
+  .accordion__level-slider-element_from::before {
+    height: 4px;
+    right: 13px;
+  }
+
+  .accordion__level-slider-element_to {
+    left: 98%;
+
+    &::after {
+      left: 13px;
+    }
+  }
+
+  .accordion__btn {
+    width: 100%;
+    height: 50px;
+
+    font-size: 20px;
+    line-height: 50px;
+  }
+
+  .accordion__level-input {
+    height: 46px;
+  }
+}

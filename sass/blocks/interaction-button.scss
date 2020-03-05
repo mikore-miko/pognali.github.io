@@ -1,0 +1,50 @@
+.interaction-button {
+  @include link-btn;
+
+  height: 40px;
+
+  &_phone {
+    font-size: 0;
+    width: 40px;
+    background: #ff8d30 url("../img/topmenu-phone.svg") center/18px no-repeat;
+  }
+
+  &_email {
+    font-size: 0;
+    width: 40px;
+    background: #ffbd30 url("../img/topmenu-mail.svg") center/18px no-repeat;
+  }
+
+  &_text {
+    width: 189px;
+    line-height: 40px;
+  }
+}
+
+
+@media #{$media-tablet-more} {
+  .interaction-button_tablet {
+    display: flex;
+  }
+
+  .interaction-button_phone,
+  .interaction-button_email {
+    display: none;
+  }
+
+  .interaction-button_text {
+    height: 50px;
+
+    line-height: 50px;
+    font-size: 20px;
+  }
+}
+
+@media #{$media-desktop-more} {
+  .interaction-button_phone,
+  .interaction-button_email {
+    display: block;
+    width: 50px;
+    height: 50px;
+  }
+}

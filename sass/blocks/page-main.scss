@@ -1,0 +1,154 @@
+.page-main {
+  background-color: #edeff6;
+}
+
+.page-main__title-wrapper {
+  display: flex;
+  padding: 0 25px;
+  padding-top: 33px;
+  margin-top: -1px;
+
+  align-items: flex-start;
+
+  position: relative;
+  z-index: 10;
+
+  background-color: $blue-darken;
+  border-radius: 0 0 20px 20px;
+}
+
+.page-main__title {
+  display: inline-block;
+  padding: 0;
+  padding-bottom: 13px;
+  margin: 0;
+
+  position: relative;
+
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 40px;
+
+  &::before {
+    height: 5px;
+
+    position: absolute;
+    right: 0;
+    left: 0;
+    bottom: -2px;
+
+    background-color: $orange-text;
+    border-radius: 2.4px;
+
+    content: "";
+  }
+}
+
+.page-main__to-index-link {
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+  padding-top: 29px;
+
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+  line-height: 24px;
+  text-transform: uppercase;
+
+  &::after {
+    display: block;
+    width: 32px;
+    height: 16px;
+    padding-left: 30px;
+
+    box-sizing: content-box;
+    background: url("../img/return.svg") right no-repeat;
+
+    content: "";
+  }
+}
+
+.page-main__catalog-content-wrapper {
+  padding-top: 76px;
+}
+
+@media #{$media-tablet-less} {
+  .page-main__to-index-link {
+    display: none;
+  }
+}
+
+
+@media #{$media-tablet-more} {
+  .page-main__title-wrapper {
+    padding: 113px 123px 0 127px;
+
+    border-radius: 0 0 60px 60px;
+
+    &_inner-page {
+      padding-left: 74px;
+      padding-right: 74px;
+      padding-top: 82px;
+    }
+  }
+
+  .page-main__title {
+    font-size: 60px;
+    line-height: 70px;
+
+    padding-bottom: 68px;
+
+    &::before {
+      height: 8px;
+
+      left: 2px;
+      right: -2px;
+      bottom: -4px;
+
+      border-radius: 4px;
+    }
+  }
+
+  .page-main__map {
+    height: 562px;
+  }
+
+  .page-main__catalog-content-wrapper {
+    padding-top: 183px;
+  }
+}
+
+@media #{$media-desktop-more} {
+  .page-main__title-wrapper_inner-page {
+    padding-top: 115px;
+    padding-left: 127px;
+    padding-right: 122px;
+  }
+
+  .page-main__catalog-content-wrapper {
+    display: flex;
+    width: 100%;
+    max-width: 1320px;
+    padding: 0;
+    margin: 0 auto;
+
+    flex-wrap: wrap;
+  }
+
+  .page-main__companions-filter {
+    margin-left: auto;
+
+    order: 1;
+    align-self: flex-start;
+  }
+
+  .page-main__slide-controller {
+    order: 2;
+  }
+
+  .page-main__map {
+    height: 498px;
+  }
+}

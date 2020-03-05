@@ -1,0 +1,51 @@
+.companions-filter {
+  padding: 25px 20px;
+  padding-bottom: 22px;
+  margin: 0 25px;
+  margin-bottom: 28px;
+
+  background-color: $yellow-base;
+  border-radius: 20px;
+}
+
+.companions-filter__title {
+  padding-left: 5px;
+  margin: 0;
+  margin-bottom: 23px;
+
+  color: $blue-base;
+  font-size: 22.5px;
+  line-height: 22.5px;
+}
+
+@media #{$media-tablet-more} {
+  .companions-filter {
+    width: 688px;
+    padding: 33px 29px;
+    padding-bottom: 38px;
+    margin: 0 auto;
+    margin-bottom: 40px;
+  }
+
+  .companions-filter__title {
+    margin-bottom: 40px;
+
+    font-size: 30px;
+    line-height: 30px;
+  }
+}
+
+@media #{$media-desktop-more} {
+  .companions-filter {
+    width: 285px;
+    padding: 43px;
+    padding-top: 44px;
+    padding-left: 47px;
+    margin: 0;
+  }
+
+  .companions-filter__title {
+    padding: 0;
+    margin-bottom: 21px;
+  }
+}

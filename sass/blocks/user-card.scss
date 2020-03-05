@@ -1,0 +1,179 @@
+.user-card {
+  position: relative;
+  z-index: 1;
+
+  max-width: 285px;
+  width: 285px;
+}
+
+.user-card__level {
+  position: absolute;
+  top: 16px;
+  left: 17px;
+}
+
+.user-card__pic {
+  display: block;
+  width: 100%;
+  height: 270px;
+
+  border-radius: 10px 10px 0 0;
+}
+
+.user-card__info {
+  padding: 0 45px;
+
+  background-color: #ffffff;
+  border-radius: 0 0 10px 10px;
+}
+
+.user-card__countries {
+  display: flex;
+  justify-content: center;
+  padding: 0;
+  margin-top: -10px;
+  margin-bottom: 9px;
+
+  list-style: none;
+}
+
+.user-card__country-card-wrapper {
+  margin: 0 10px;
+}
+
+.user-card__country-card {
+  display: block;
+  width: 35px;
+  height: 24px;
+}
+
+.user-card__full-name {
+  margin: 0 auto;
+  margin-bottom: 15px;
+
+  text-align: center;
+  color: $blue-base;
+  font-weight: 700;
+  font-size: 21px;
+  line-height: 21px;
+}
+
+.user-card__user-name-link {
+  position: relative;
+
+  &::before {
+    display: block;
+    width: 5px;
+    height: 5px;
+
+    position: absolute;
+    top: 50%;
+    left: -16px;
+
+    border-radius: 50%;
+
+    background-color: #f97676;
+
+    transform: translateY(-42%);
+    content: "";
+  }
+
+  &_online::before {
+    background-color: #81e31e;
+  }
+}
+
+.user-card__tags {
+  display: flex;
+  margin: 0;
+  margin-bottom: 18px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.user-card__tag {
+  margin: 0 2px;
+
+  line-height: 18px;
+  font-size: 16px;
+}
+
+.user-card__transport-preferences {
+  display: flex;
+  padding-bottom: 13px;
+  justify-content: center;
+}
+
+.user-card__transport {
+  margin: 0 7px;
+
+  fill: #d9d9d9;
+
+  &_active {
+    fill: $blue-base;
+  }
+}
+
+
+@media #{$media-tablet-more} {
+  .user-card__level {
+    top: 20px;
+    left: 21px;
+  }
+
+  .user-card__info {
+    padding: 0 28px;
+
+    border-radius: 0 0 20px 20px;
+  }
+
+  .user-card__pic {
+    height: 285px;
+
+    border-radius: 20px 20px 0 0;
+  }
+
+  .user-card__countries {
+    margin-top: -11px;
+    margin-bottom: 15px;
+  }
+
+  .user-card__full-name {
+    margin-bottom: 22px;
+  }
+
+  .user-card__user-name-link {
+    font-size: 24px;
+    line-height: 24px;
+
+    &::before {
+      width: 7px;
+      height: 7px;
+
+      top: 55%;
+      left: -22px;
+    }
+  }
+
+  .user-card__tags {
+    margin-bottom: 26px;
+  }
+
+  .user-card__tag {
+    margin: 0 3px;
+
+    font-size: 20px;
+    line-height: 24px;
+  }
+
+  .user-card__transport-preferences {
+    padding-bottom: 19px;
+  }
+}
+
+@media #{$media-desktop-more} {
+  .user-card__level {
+    top: 23px;
+    left: 23px;
+  }
+}

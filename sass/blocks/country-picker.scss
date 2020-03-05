@@ -1,0 +1,333 @@
+.country-picker {
+  display: none;
+  padding: 25px;
+  padding-bottom: 17px;
+}
+
+.companions-country-filter__country-picker-control_active ~ .country-picker {
+  display: block;
+}
+
+.country-picker__name-word-part {
+  display: block;
+  margin-bottom: 5px;
+
+  line-height: 22px;
+  font-size: 16px;
+  font-weight: 700;
+  text-transform: uppercase;
+
+  color: $blue-nav-text;
+
+  opacity: 0.3;
+}
+
+.country-picker__name-words-mobile {
+  margin-bottom: 21px;
+}
+
+.country-picker__alphabet {
+  margin-bottom: 22px;
+}
+
+.country-picker__sub-letter-country {
+  display: none;
+
+  color: $text-color;
+  font-family: inherit;
+  font-size: 20px;
+  line-height: 30px;
+  text-align: left;
+
+  background-color: transparent;
+  border: none;
+}
+
+.country-picker__name-word-part-control[id$="europe"]:checked ~ .country-picker-bar .country-picker__name-word-part[for$="europe"],
+.country-picker__name-word-part-control[id$="europe"]:checked ~ .country-picker .country-picker__name-word-part[for$="europe"],
+.country-picker__name-word-part-control[id$="asian"]:checked ~ .country-picker-bar .country-picker__name-word-part[for$="asian"],
+.country-picker__name-word-part-control[id$="asian"]:checked ~ .country-picker .country-picker__name-word-part[for$="asian"],
+.country-picker__name-word-part-control[id$="usa"]:checked ~ .country-picker-bar .country-picker__name-word-part[for$="usa"],
+.country-picker__name-word-part-control[id$="usa"]:checked ~ .country-picker .country-picker__name-word-part[for$="usa"],
+.country-picker__name-word-part-control[id$="islands"]:checked ~ .country-picker-bar .country-picker__name-word-part[for$="islands"],
+.country-picker__name-word-part-control[id$="islands"]:checked ~ .country-picker .country-picker__name-word-part[for$="islands"] {
+  opacity: 1;
+}
+
+.country-picker__alphabet-body {
+  display: flex;
+  flex-wrap: wrap;
+  width: 220px;
+}
+
+.country-picker__letter-wrapper {
+  height: 41px;
+  width: 44px;
+}
+
+.country-picker__letter {
+  display: block;
+  width: 45px;
+  height: 42px;
+
+  color: $blue-base;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 42px;
+  text-align: center;
+  text-transform: uppercase;
+
+  background-color: #ffffff;
+
+  border: 1px solid #cbced9;
+  border-right: none;
+
+  cursor: pointer;
+}
+
+.country-picker__letter-wrapper:nth-child(5n) .country-picker__letter {
+  border-right: 1px solid #cbced9;
+}
+
+.country-picker__letter-control:checked + .country-picker__letter {
+  color: #ffffff;
+
+  background-color: $blue-base;
+  border: none;
+}
+
+.country-picker__country-wrapper {
+  display: none;
+  margin-bottom: 23px;
+}
+
+.country-picker__country {
+  display: block;
+  padding: 0;
+
+  color: #444444;
+  font-family: inherit;
+  font-size: 16px;
+  line-height: 22px;
+
+  background-color: transparent;
+  border: none;
+}
+
+.country-picker__close-btn-wrapper {
+  display: flex;
+  width: 270px;
+  height: 40px;
+  padding: 0;
+  margin-left: -25px;
+
+  background-color: #d6daed;
+  border: none;
+  border-radius: 20px;
+
+  font-family: inherit;
+}
+
+.country-picker__close-btn {
+  display: block;
+  margin: auto;
+
+  line-height: 20px;
+  font-size: 17px;
+  font-weight: 700;
+  text-align: center;
+  text-transform: uppercase;
+
+  @include cross-before;
+
+  &::before,
+  &::after {
+    left: -5px;
+
+    transform: rotate(45deg);
+  }
+
+  &::before {
+    transform: rotate(-45deg);
+  }
+}
+
+.country-picker__name-words {
+  display: none;
+}
+
+@media #{$media-tablet-less} {
+  .country-picker__country-wrapper_mobile {
+    display: block;
+    padding-left: 2px;
+  }
+}
+
+@media #{$media-tablet-more} {
+  .country-picker {
+    padding: 0;
+
+    flex-wrap: wrap;
+  }
+
+  .companions-country-filter__country-picker-control_active ~ .country-picker {
+    display: flex;
+
+    // flex-direction: column;
+  }
+
+  .country-picker__alphabet {
+    margin-top: -10px;
+    margin-right: 79px;
+    margin-bottom: 57px;
+    margin-left: -20px;
+
+    border: none;
+  }
+
+  .country-picker__name-words {
+    display: flex;
+    padding-top: 5px;
+  }
+
+  .country-picker__name-words-mobile {
+    display: none;
+  }
+
+  .country-picker__name-word-part {
+    margin-right: 27px;
+
+    font-size: 20px;
+    line-height: 24px;
+    text-transform: uppercase;
+  }
+
+  .country-picker__alphabet-body {
+    width: 385px;
+  }
+
+  .country-picker__letter-wrapper {
+    display: flex;
+    height: auto;
+    width: auto;
+
+    flex-wrap: wrap;
+
+    background-color: transparent;
+    border: none;
+  }
+
+
+  .country-picker__letter-wrapper_on-table-hidden {
+    display: none;
+  }
+
+  .country-picker__letter-control:checked + .country-picker__letter,
+  .country-picker__letter {
+    display: block;
+    width: 77px;
+    height: auto;
+
+    color: $blue-nav-text;
+    font-size: 60px;
+    font-weight: bold;
+    line-height: 83px;
+
+    background-color: transparent;
+    border: none;
+
+    opacity: 0.2;
+  }
+
+  .country-picker__letter-wrapper:nth-child(5n) .country-picker__letter {
+    border: none;
+  }
+
+  .country-picker__letter-control:checked + .country-picker__letter {
+    opacity: 1;
+  }
+
+  .country-picker__country-wrapper {
+    margin: 0;
+    padding-top: 1px;
+  }
+
+  .country-picker__country-wrapper_tablet {
+    display: block;
+  }
+
+  .country-picker__country {
+    padding: 0;
+    font-size: 20px;
+    line-height: 30px;
+  }
+
+  .country-picker__close-btn-wrapper {
+    width: 100%;
+    height: 100px;
+    margin: 0 auto;
+    margin-bottom: 74px;
+
+    color: $blue-base;
+    line-height: 100px;
+  }
+
+  .country-picker__close-btn {
+    height: 20px;
+    padding-left: 35px;
+
+    font-size: 20px;
+  }
+}
+
+@media #{$media-desktop-more} {
+  .companions-country-filter {
+    margin-bottom: 77px;
+  }
+
+  .country-picker__alphabet {
+    margin: 0;
+    margin-top: -13px;
+    padding-left: 66px;
+  }
+
+  .country-picker__country-wrapper {
+    display: none;
+  }
+
+  .country-picker__alphabet-body {
+    width: 100%;
+    margin-bottom: 35px;
+  }
+
+  .country-picker__name-word-part {
+    margin-right: 28px;
+  }
+
+  .country-picker__letter-wrapper {
+    display: flex;
+    margin-bottom: 51px;
+
+    flex-basis: 16%;
+    flex-grow: 1;
+    flex-direction: column;
+  }
+
+  .country-picker__letter-wrapper_on-table-hidden,
+  .country-picker__letter-wrapper_on-desktop-hidden {
+    display: none;
+  }
+
+  .country-picker__sub-letter-country {
+    display: block;
+    padding: 0;
+  }
+
+  .country-picker__letter {
+    margin-bottom: 9px;
+
+    text-align: left;
+    pointer-events: none;
+    opacity: 1;
+  }
+}

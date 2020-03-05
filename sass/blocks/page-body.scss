@@ -1,0 +1,14 @@
+.page-body {
+  width: 320px;
+  margin: 0 auto;
+
+  background-color: #edeff6;
+
+  @media #{$media-tablet-more} {
+    width: $tablet-width;
+  }
+
+  @media #{$media-desktop-more} {
+    width: $desktop-width;
+  }
+}

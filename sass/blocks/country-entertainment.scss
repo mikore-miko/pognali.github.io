@@ -1,0 +1,206 @@
+.country-entertainment {
+  max-width: 875px;
+  margin-bottom: 13px;
+
+  position: relative;
+
+  &::before {
+    width: 15px;
+    height: 2px;
+
+    position: absolute;
+    top: 12px;
+    left: -13px;
+
+    background-color: $blue-base;
+
+    content: "";
+  }
+}
+
+.country-entertainment + .country-entertainment {
+  margin-bottom: 12px;
+
+  &::after {
+    width: 2px;
+    height: 283px;
+
+    position: absolute;
+    top: -269px;
+    left: -13px;
+
+    background-color: $blue-base;
+
+    content: "";
+  }
+}
+
+.country-entertainment__holder {
+  display: flex;
+  align-items: center;
+  margin-bottom: 14px;
+}
+
+.country-entertainment__country-name {
+  display: flex;
+  margin: 0;
+
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 18px;
+  color: $blue-base;
+
+  position: relative;
+
+  &::before {
+    width: 6px;
+    height: 6px;
+    margin-top: 7px;
+    margin-left: -2px;
+    margin-right: 8px;
+
+    background-color: $blue-base;
+    border-radius: 50%;
+
+    content: "";
+  }
+}
+
+.country-entertainment__country-flag-wrapper {
+  display: flex;
+  margin-left: auto;
+}
+
+.country-entertainment__country-flag {
+  margin-right: 1px;
+
+  border-radius: 4px;
+}
+
+.country-entertainment__desc {
+  width: 220px;
+  height: 220px;
+  padding: 7px;
+  padding-left: 13px;
+  margin-left: 1px;
+
+  font-family: $font-family;
+  font-size: 16px;
+  line-height: 22px;
+  color: $text-color;
+
+  border-radius: 4px;
+  border-color: #cbced9;
+
+  resize: none;
+
+  &::placeholder {
+    color: $text-color;
+    opacity: 0.3;
+  }
+}
+
+@media #{$media-tablet-more} {
+  .country-entertainment__wrapper {
+    padding-top: 27px;
+
+    border-top: 1px solid #d6d9e6;
+  }
+
+  .country-entertainment {
+    margin-bottom: 33px;
+
+    &::before {
+      content: none;
+    }
+  }
+
+  .country-entertainment + .country-entertainment {
+    margin-bottom: 37px;
+
+    &::after {
+      width: 3px;
+      height: 260px;
+
+      top: -240px;
+      left: auto;
+      right: 3px;
+    }
+  }
+
+  .country-entertainment__holder {
+    padding-right: 30px;
+    margin-bottom: 29px;
+
+    position: relative;
+  }
+
+  .country-entertainment__desc {
+    width: 100%;
+    height: 142px;
+    max-width: 499px;
+    padding: 16px 17px;
+    padding-right: 40px;
+    margin-left: 2px;
+
+    font-size: 20px;
+    line-height: 24px;
+  }
+
+  .country-entertainment__country-name {
+    padding-left: 1px;
+    padding-bottom: 5px;
+
+    position: static;
+
+    font-size: 30px;
+    letter-spacing: 0.5px;
+
+    &::before {
+      width: 15px;
+      height: 15px;
+
+      position: absolute;
+      top: 10px;
+      right: -11px;
+    }
+  }
+
+  .country-entertainment__country-flag {
+    width: 70px;
+    height: 47px;
+  }
+}
+
+@media #{$media-desktop-more} {
+  .country-entertainment__wrapper {
+    padding-top: 94px;
+  }
+
+  .country-entertainment {
+    max-width: 917px;
+    margin-bottom: 34px;
+  }
+
+  .country-entertainment__country-name::before {
+    top: 8px;
+    right: 127px;
+  }
+
+  .country-entertainment + .country-entertainment::after {
+    width: 3px;
+    right: 141px;
+  }
+
+  .country-entertainment__desc {
+    max-width: 727px;
+    height: 140px;
+    padding-top: 22px;
+    padding-left: 22px;
+    padding-right: 10px;
+  }
+
+  .country-entertainment + .country-entertainment {
+    margin-bottom: 47px;
+  }
+}

@@ -1,0 +1,78 @@
+.profile-add-plan {
+  padding: 25px;
+  padding-top: 27px;
+  padding-bottom: 59px;
+  margin-top: -20px;
+
+  border-radius: 30px 30px 0 0;
+  background-color: #d4d9eb;
+}
+
+.profile-add-plan__title {
+  display: flex;
+  align-items: center;
+  margin: 0;
+  margin-bottom: 32px;
+
+  color: $blue-base;
+  font-weight: 700;
+  line-height: 24px;
+  font-size: 24px;
+}
+
+.profile-add-plan__title-dots {
+  display: flex;
+  width: 47px;
+  margin-top: 4px;
+  margin-right: 18px;
+  margin-left: auto;
+
+  justify-content: space-between;
+}
+
+.profile-add-plan__title-dot {
+  display: block;
+  width: 5px;
+  height: 5px;
+
+  background-color: #bbbfcc;
+  border-radius: 50%;
+
+  &_active {
+    background-color: $blue-base;
+  }
+}
+
+@media #{$media-tablet-more} {
+  .profile-add-plan {
+    padding: 58px 75px;
+  }
+
+  .profile-add-plan__title {
+    font-size: 36px;
+    margin-bottom: 66px;
+  }
+
+  .profile-add-plan__title-dots {
+    width: 73px;
+    margin-top: 3px;
+    margin-right: 0;
+  }
+}
+
+@media #{$media-desktop-more} {
+  .profile-add-plan {
+    padding: 57px 59px;
+    margin-top: -52px;
+    border-radius: 60px 60px 0 0;
+  }
+
+  .profile-add-plan__title {
+    padding-left: 73px;
+    margin-bottom: 67px;
+  }
+
+  .profile-add-plan__title-dots {
+    display: none;
+  }
+}

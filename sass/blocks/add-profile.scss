@@ -1,0 +1,321 @@
+.add-profile {
+  padding: 44px 25px;
+  padding-left: 48px;
+  padding-bottom: 40px;
+
+  position: relative;
+  z-index: 3;
+
+  background-color: #edeff6;
+  border-radius: 0 0 30px 30px;
+
+  counter-reset: add-profile-counter;
+}
+
+
+.add-profile__tariff-item {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 12px;
+
+  position: relative;
+
+  border-top: 1px solid rgba(0, 0, 0, 0.05);
+
+  &:last-child {
+    padding-bottom: 12px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  }
+}
+
+.add-profile__title {
+  display: block;
+  width: 120px;
+  margin: 0;
+  margin-bottom: 43px;
+
+  font-size: 24px;
+  line-height: 24px;
+  font-weight: 700;
+
+  position: relative;
+
+  color: $orange-text;
+
+  &::after {
+    display: inline-block;
+    width: 99px;
+    height: 99px;
+
+    position: absolute;
+    right: -122px;
+    top: -12px;
+
+    background: url("../img/rates@1x.png") no-repeat;
+    background-size: cover;
+    content: "";
+  }
+}
+
+.add-profile__tariffs {
+  display: block;
+  margin: 0;
+  margin-bottom: 27px;
+  padding: 0;
+  padding-right: 40px;
+
+  position: relative;
+}
+
+.add-profile__tariff-description {
+  width: 200px;
+  padding: 0;
+  padding-top: 13px;
+  margin: 0;
+  margin-bottom: 4px;
+
+  font-size: 16px;
+  line-height: 16px;
+  font-weight: 300;
+
+  position: relative;
+
+  &::before {
+    display: block;
+    width: 34px;
+    height: 34px;
+
+    position: absolute;
+    top: 3px;
+    right: -44px;
+
+
+    color: white;
+    font-size: 16px;
+    text-align: center;
+    line-height: 34px;
+
+    border-radius: 50%;
+    background-color: #ffa530;
+
+    counter-increment: add-profile-counter;
+    content: counter(add-profile-counter);
+  }
+}
+
+
+.add-profile__tariff-item:nth-child(2) .add-profile__tariff-description::before {
+  background-color: #ffbd30;
+}
+
+.add-profile__tariff-item:nth-child(3) .add-profile__tariff-description::before {
+  background-color: #ffd74b;
+}
+
+.add-profile__text-btn {
+  display: block;
+  margin-right: 26px;
+
+  color: $blue-nav-text;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 16px;
+  text-align: center;
+}
+
+.add-profile__tariff-price {
+  display: block;
+
+  font-size: 16px;
+  line-height: 18px;
+}
+
+@media #{$media-tablet-more} {
+  .add-profile {
+    padding: 0 40px;
+    padding-top: 66px;
+    padding-bottom: 49px;
+
+    border-radius: 0 0 60px 60px;
+  }
+
+  .add-profile__table {
+    width: 100%;
+  }
+
+  .add-profile__title {
+    width: auto;
+    margin-bottom: 75px;
+
+    font-size: 45px;
+    line-height: 45px;
+    text-align: center;
+
+    &::after {
+      display: inline;
+      position: static;
+
+      background: none;
+
+      content: "!";
+    }
+  }
+
+  .add-profile__tariff-item {
+    margin-bottom: 1px;
+    margin-right: 29px;
+
+    line-height: 60px;
+  }
+
+  .add-profile__tariff-item:last-child {
+    padding-bottom: 1px;
+  }
+
+  .add-profile__tariff-description::before {
+    width: 67px;
+    height: 67px;
+    margin-right: 20px;
+
+    top: 50%;
+    right: auto;
+    left: -90px;
+    transform: translateY(-50%);
+
+    font-size: 28px;
+    line-height: 67px;
+  }
+
+  .add-profile__tariff-description {
+    width: auto;
+    padding: 0;
+
+    font-size: 28px;
+    line-height: inherit;
+  }
+
+  .add-profile__tariff-price {
+    width: 164px;
+    margin-left: auto;
+
+    font-size: 28px;
+    line-height: inherit;
+    text-align: right;
+
+    position: relative;
+    z-index: 1;
+  }
+
+  .add-profile__tariffs {
+    padding: 0;
+    padding-left: 89px;
+    margin-bottom: 15px;
+
+    &::before {
+      display: block;
+      width: 198px;
+
+      position: absolute;
+      top: -44px;
+      right: -4px;
+      bottom: -44px;
+      z-index: 0;
+
+      background-color: #e2e5f2;
+      border-radius: 20px;
+
+      content: "";
+    }
+  }
+
+  .add-profile__text-btn {
+    display: flex;
+    margin-right: 46px;
+
+    align-items: center;
+
+    font-size: 20px;
+    line-height: 20px;
+    text-align: left;
+
+    &::before {
+      display: block;
+      width: 67px;
+      height: 67px;
+      margin-right: 22px;
+
+      background: #e2e5f2 url("../img/business.svg") center/17px 21px no-repeat;
+      border-radius: 50%;
+
+      content: "";
+    }
+
+    &::after {
+      display: block;
+      width: 99px;
+      height: 99px;
+      margin-left: auto;
+
+      position: relative;
+
+      background: url("../img/rates@1x.png") no-repeat;
+      background-size: cover;
+      content: "";
+    }
+  }
+}
+
+@media #{$media-desktop-more} {
+  .add-profile {
+    padding-top: 99px;
+    padding-bottom: 167px;
+  }
+
+  .add-profile__table {
+    width: 87%;
+    margin: 0 auto;
+    margin-bottom: 14px;
+    // padding-right: 159px;
+  }
+
+  .add-profile__title {
+    margin-bottom: 136px;
+  }
+
+  .add-profile__tariffs {
+    margin-right: 243px;
+  }
+
+  .add-profile__tariffs::before {
+    width: 444px;
+    top: -52px;
+    right: 17px;
+    bottom: -48px;
+    transform: translateX(33%);
+  }
+
+  .add-profile__tariffs::after {
+    display: block;
+    width: 198px;
+    height: 198px;
+    margin-left: auto;
+
+    position: absolute;
+    right: -242px;
+    top: 50%;
+    transform: translateY(-50%);
+
+    background: url("../img/rates@1x.png") no-repeat;
+    background-size: cover;
+    content: "";
+  }
+
+  .add-profile__text-btn {
+    padding-left: 91px;
+
+
+    &::after {
+      content: none;
+    }
+  }
+}

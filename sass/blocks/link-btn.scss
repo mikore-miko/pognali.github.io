@@ -1,0 +1,21 @@
+.link-btn {
+  @include link-btn;
+
+  &_width_230 {
+    width: 230px;
+    height: 40px;
+    line-height: 40px;
+  }
+
+  &_bgc_white {
+    background-color: #ffffff;
+  }
+
+  &_bgc_gray {
+    background-color: #dfe3f0;
+  }
+
+  &_bgc_transparent {
+    background-color: transparent;
+  }
+}

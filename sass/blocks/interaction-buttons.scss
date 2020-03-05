@@ -1,0 +1,50 @@
+.interaction-buttons {
+  height: 255px;
+  /* margin-bottom: 45px; */
+
+  position: relative;
+
+  background: url("../img/globe-back-mobile@1x.jpg") no-repeat;
+  background-position: center -223px;
+  background-size: cover;
+
+  @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
+    background-image: url("../img/globe-back-mobile@2x.jpg");
+    background-size: 320px 569px;
+  }
+
+  &::before {
+    display: block;
+    height: inherit;
+    background: url("../img/traveller-illustration-mobile@1x.png") no-repeat 79px 0;
+    content: "";
+
+    @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
+      background-image: url("../img/traveller-illustration-mobile@2x.png");
+      background-size: 192px 255px;
+    }
+  }
+}
+
+.interaction-buttons__buttons {
+  position: absolute;
+  bottom: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: center;
+
+  &_tablet {
+    display: none;
+
+    position: static;
+
+    transform: none;
+  }
+}
+
+@media #{$media-tablet-more} {
+  .interaction-buttons {
+    display: none;
+  }
+}

@@ -1,0 +1,187 @@
+.smart-counter {
+  display: flex;
+
+  flex-wrap: wrap;
+}
+
+.smart-counter__title,
+.smart-counter__extra {
+  margin: 0;
+
+  color: $blue-base;
+
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 16px;
+  letter-spacing: 1.5px;
+
+  text-transform: uppercase;
+}
+
+.smart-counter__title {
+  margin-bottom: 10px;
+}
+
+.smart-counter__extra {
+  margin-left: auto;
+
+  opacity: 0.3;
+}
+
+.smart-counter__holder {
+  display: flex;
+  width: 100%;
+  min-height: 43px;
+  height: 43px;
+  max-width: 220px;
+  margin: 0 auto;
+
+  position: relative;
+}
+
+.smart-counter__btn {
+  display: block;
+  width: 14px;
+  height: 14px;
+  padding: 0;
+
+  position: absolute;
+  left: 15px;
+  top: 50%;
+
+  font-size: 0;
+
+  background-color: transparent;
+  border: none;
+
+  transform: translateY(-50%);
+
+  &::before,
+  &::after {
+    display: block;
+    width: 14px;
+    height: 2px;
+
+    background-color: #cfcfcf;
+
+    transform-origin: 8px 0;
+
+    content: "";
+  }
+
+  &::after {
+    transform: rotate(90deg);
+  }
+
+  &_decrement {
+    &::after {
+      content: none;
+    }
+  }
+
+  &_increment {
+    left: auto;
+    right: 15px;
+  }
+}
+
+
+.smart-counter__input {
+  display: block;
+  width: inherit;
+  height: inherit;
+  padding: 0 23px;
+
+  text-align: center;
+  line-height: 41px;
+
+  border: 1px solid #cbced9;
+  border-radius: 4px;
+}
+
+@media #{$media-tablet-more} {
+  .smart-counter__title {
+    margin-bottom: 27px;
+
+    font-size: 20px;
+
+    letter-spacing: 2px;
+  }
+
+  .smart-counter__extra {
+    width: 50%;
+    margin-right: 2px;
+
+    font-size: 20px;
+    text-align: right;
+  }
+
+  .smart-counter__holder {
+    max-width: none;
+    min-height: 70px;
+    height: 70px;
+    margin-left: 1px;
+  }
+
+  .smart-counter__input {
+    padding: 0 37px;
+
+    font-size: 20px;
+    line-height: 68px;
+  }
+
+  .smart-counter__btn_increment {
+    width: 20px;
+    height: 20px;
+
+    top: 52%;
+    right: 20px;
+
+    &::before,
+    &::after {
+      width: 20px;
+      transform-origin: 10px 0;
+    }
+
+    &::after {
+      transform-origin: 11px 0;
+    }
+  }
+
+  .smart-counter__btn_decrement {
+    width: 20px;
+    left: 23px;
+
+    &::before {
+      width: 20px;
+    }
+  }
+}
+
+@media #{$media-desktop-more} {
+  .smart-counter {
+    width: 484px;
+    margin-bottom: 14px;
+
+    align-items: center;
+  }
+
+  .smart-counter__title {
+    width: 220px;
+    margin: 0;
+  }
+
+  .smart-counter__extra {
+    width: auto;
+    margin: 0;
+
+    opacity: 1;
+
+    order: 1;
+  }
+
+  .smart-counter__holder {
+    width: 182px;
+    margin-right: 36px;
+  }
+}

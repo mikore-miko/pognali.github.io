@@ -1,0 +1,27 @@
+.line-break {
+  display: none;
+}
+
+@media #{$media-tablet-less} {
+  .line-break_mobile {
+    display: block;
+  }
+}
+
+@media #{$media-tablet-more} {
+  .line-break_mobile {
+    display: none;
+  }
+}
+
+@media #{$media-between-tablet-desktop} {
+  .line-break_tablet {
+    display: block;
+  }
+}
+
+@media #{$media-desktop-more} {
+  .line-break_desktop {
+    display: block;
+  }
+}
